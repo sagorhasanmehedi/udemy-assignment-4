@@ -7,11 +7,11 @@ const ExpencesItem = (props) => {
     <div className="">
       <div className="expense-item">
         <div className="expense-item__description">
-          <ExpencesDate date={props.data.date} />
-          <h2>{props.data.title}</h2>
+          <ExpencesDate date={props.data?.date} />
+          <h2>{props.data?.title}</h2>
         </div>
         <div className="expense-item__price">
-          <h2>$799.48</h2>
+          <h2>$ {props.data.amount}</h2>
         </div>
       </div>
     </div>
