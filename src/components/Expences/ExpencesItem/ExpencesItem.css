@@ -35,8 +35,9 @@
   border: 1px solid white;
   border-radius: 12px;
 }
-.expense-item__price h1 {
+.expense-item__price h2 {
   margin: 11px 0px;
+  font-size: 25px;
 }
 
 @media (min-width: 580px) {

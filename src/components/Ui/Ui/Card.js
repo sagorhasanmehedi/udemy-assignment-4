@@ -1,8 +1,10 @@
-import React from "react";
-import "./Ui.css";
+import React, { useState } from "react";
+import "./Card.css";
 import ExpencesItem from "../../Expences/ExpencesItem/ExpencesItem";
+import ExpencesFilter from "../../Expences/ExpencesFilter/ExpencesFilter";
 
-const Ui = () => {
+const Card = () => {
+  const [expencesYear, setExpencesYear] = useState(2020);
   const expenses = [
     {
       id: "e1",
@@ -29,9 +31,13 @@ const Ui = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const YearHandel = (year) => {
+    setExpencesYear(year);
+  };
   return (
     <div className="Ui">
-      <h1 className="UiHeading"> Expences Items</h1>
+      <ExpencesFilter YearHandel={YearHandel} expencesYear={expencesYear} />
       {expenses.map((Data) => (
         <ExpencesItem data={Data} key={Data.id} />
       ))}
@@ -39,4 +45,4 @@ const Ui = () => {
   );
 };
 
-export default Ui;
+export default Card;
